@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import Hero1 from "../assets/Hero1.jpg";
+---
+
+<section class="relative h-[50vh] xl:h-[88vh]">
+  <!-- Optimized image with Astro Image component -->
+  <Image src={Hero1} alt="Hero background"  class="object-cover h-full w-full" />
+  
+  <!-- Overlay and content -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        ¡Llegaste A Migas D'Angeles!
+      </h1>
+      <a href="/productos" class="bg-black text-white py-3 px-8 rounded-full text-lg inline-block hover:bg-gray-800 transition">
+        NUESTROS PRODUCTOS <span class="ml-2">🍰</span>
+      </a>
+    </div>
+  </div>
+</section>

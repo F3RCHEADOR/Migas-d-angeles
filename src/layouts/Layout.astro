@@ -1,4 +1,7 @@
 ---
+import { ClientRouter } from "astro:transitions";
+import Header from "../components/Header.astro";
+
 interface Props {
 	title: string;
 }
@@ -15,8 +18,10 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ClientRouter />
 	</head>
-	<body>
+	<Header />
+	<body class="">
 		<slot />
 	</body>
 </html>
@@ -35,16 +40,12 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background: #13151a;
+		color: white;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	body {
+		user-select: none;
+	}
+	body > div {
+		@apply container;
 	}
 </style>

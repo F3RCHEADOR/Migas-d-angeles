@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const categories = await getCollection("categories");
+    return categories.map((categoria) => ({
+        params: { id: categoria.slug },
+        props: { categoria },
+    }));
+}
+
+const { categoria } = Astro.props;
+const { data, slug } = categoria;
+const { title, img, description } = data;
+const { Content } = await render(categoria);
+---
+
+<Layout title={title}>
+    <div class="flex w-full items-center justify-center mx-auto gap-12">
+        <aside class="flex flex-col items-center gap-4">
+            <a href="/" class="underline">Vovler Atras 🡰 </a>
+            <img
+                transition:name=`img-${slug}`
+                src={`/${img}`}
+                alt={title}
+                class="rounded w-96 h-auto"
+            />
+        </aside>
+        <main class="max-w-3xl">
+            <h1 
+            transition:name=`title-${title}`
+            class="text-4xl font-bold">{title}</h1>
+            <div class="prose prose-invert"><Content /></div>
+        </main>
+    </div>
+</Layout>
