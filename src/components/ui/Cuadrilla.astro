@@ -1,0 +1,49 @@
+---
+import { Picture } from 'astro:assets';
+
+// Importar las imágenes
+import almojabana from '../../assets/almojabana_2024-320x202.jpeg';
+import bunuelos from '../../assets/bunuelos_2024_-320x202.jpeg';
+import croissant from '../../assets/croissant_2024_-320x202.jpeg'; 
+import dedoquesohojaldre from '../../assets/dedoquesohojaldre_2024-320x202.jpeg';
+import empanadaCambray from '../../assets/empanada_cambray_2024-320x202.jpeg';
+import hawaiano from '../../assets/hawaiano_2024-320x202.jpeg'; 
+import panBig from '../../assets/pan_big2024-320x202.jpeg'; 
+import pandebono from '../../assets/pandebono_2024-320x202.jpeg';
+import arepa from '../../assets/arepa_calarquena_2024-scaled.jpeg';
+import chicharron from '../../assets/chicharron_dulce-scaled.jpeg';
+import churros from '../../assets/churros_2024-scaled.jpeg';
+import dedoqueso from '../../assets/dedodequesodulce_2024-scaled.jpeg';
+import panchocha from '../../assets/pan_chocha_2024-scaled.jpeg';
+import panquesudo from '../../assets/Pan_quesudo_2024-scaled.jpeg';
+import pansalchicha from '../../assets/pan_salchicha_2024-scaled.jpeg';
+import pastelgloria from '../../assets/pastelGloria_2024-scaled.jpeg';
+import rollos from '../../assets/rollos_2024-scaled.jpeg';
+
+// Arreglo de imágenes con rutas y descripciones
+const images = [
+  { src: almojabana, alt: 'Almojabana' },
+  { src: bunuelos, alt: 'Bunuelos' },
+  { src: croissant, alt: 'Croissant' },
+  { src: dedoquesohojaldre, alt: 'Dedo de queso hojaldre' },
+  { src: empanadaCambray, alt: 'Empanada Cambray' },
+  { src: hawaiano, alt: 'Hawaiano' },
+  { src: panBig, alt: 'Pan Big' },
+  { src: pandebono, alt: 'Pandebono' },
+  { src: arepa, alt: 'Arepa' },
+  { src: chicharron, alt: 'Chicharrón dulce' },
+  { src: churros, alt: 'Churros' },
+  { src: dedoqueso, alt: 'Dedo de queso' },
+  { src: panchocha, alt: 'Pan chocha' },
+  { src: panquesudo, alt: 'Pan quesudo' },
+  { src: pansalchicha, alt: 'Pan salchicha' },
+  { src: pastelgloria, alt: 'Pastel Gloria' },
+  { src: rollos, alt: 'Rollos' },
+];
+---
+
+<section class="grid grid-cols-4 gap-4 p-6">
+  {images.map(image => (
+    <Picture class={'h-auto'} src={image.src} formats={['avif', 'webp']} alt={image.alt} />
+  ))}
+</section>
