@@ -2,45 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import Hero from "../components/Hero.astro";
+import AboutSection from "../components/layouts/AboutSection.astro";
 
 const categories = await getCollection("categories");
 ---
 
 <Layout title="Welcome to Astro.">
-
 	<Hero />
-
-	<section class="border-4 mx-auto max-w-screen-2xl">
-		<div class="grid grid-cols-1 xl:grid-cols-3 gap-2">
-			{
-				categories.map((category) => {
-					const { slug, data } = category;
-					const { title, img, description } = data;
-
-					return (
-						<article class="flex">
-							<a
-								href={`/categoria/${slug}`}
-								class="mb-2 xl:mb-0 transition-all hover:scale-110 p-4"
-							>
-								<img 
-								transition:name=`img-${slug}`
-									src={`/${img}`}
-									alt={title}
-									class="w-full rounded-lg h-48"
-								/>
-							</a>
-							<div class="flex flex-col justify-center">
-								<h3 
-									 transition:name=`title-${title}`
-									class="mb-2 text-2xl font-bold leading-tight text-white">{title}</h3>
-								<p class="mb-4 text-gray-300 max-w-sm">{description}</p>
-							
-							</div>
-						</article>
-					);
-				})
-			}
-		</div>
-	</section>
+	
 </Layout>

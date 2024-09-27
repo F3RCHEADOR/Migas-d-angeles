@@ -1,0 +1,45 @@
+---
+import { Picture } from "astro:assets";
+
+// Importar las imágenes
+import tortas from "../../assets/tortas.jpg";
+import bandeja from "../../assets/bandeja-paisa.jpg";
+import cafe from "../../assets/cafe2.jpg";
+import imagenCua from "../../assets/IMG_0612_usar.jpg";
+import pasteleria from "../../assets/pasteleria.jpg";
+import pulpo from "../../assets/pulpo_papas.jpg";
+import restaurante from "../../assets/restaurantes.jpg";
+import reserva from "../../assets/Reserva-tu-torta.jpg";
+
+// Arreglo de imágenes con rutas y descripciones
+const images = [
+  { src: tortas, alt: "tortas" },
+  { src: bandeja, alt: "bandeja" },
+  { src: cafe, alt: "cafe" },
+  { src: imagenCua, alt: "imagenCua" },
+  { src: pasteleria, alt: "pasteleria" },
+  { src: pulpo, alt: "pulpo" },
+  { src: restaurante, alt: "restaurante" },
+  { src: reserva, alt: "reserva" },
+];
+---
+
+<section class="w-full grid grid-cols-2 xl:grid-cols-4 gap-8  p-4">
+  {
+    images.map((image) => (
+      <div class="relative group">
+        <Picture
+          class={
+            "w-full h-56 object-cover rounded-lg shadow group-hover:blur-[3px] duration-300  "
+          }
+          src={image.src}
+          formats={["avif", "webp"]}
+          alt={image.alt}
+        />
+        <span class="group-hover:absolute hidden group-hover:block top-1/2 right-1/2 transform translate-x-1/2 text-xl capitalize font-bold bg-white bg-opacity-50 p-1 rounded-lg transition-all ">
+          {image.alt}
+        </span>
+      </div>
+    ))
+  }
+</section>

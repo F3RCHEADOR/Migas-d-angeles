@@ -1,49 +1,61 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 
 // Importar las imágenes
-import almojabana from '../../assets/almojabana_2024-320x202.jpeg';
-import bunuelos from '../../assets/bunuelos_2024_-320x202.jpeg';
-import croissant from '../../assets/croissant_2024_-320x202.jpeg'; 
-import dedoquesohojaldre from '../../assets/dedoquesohojaldre_2024-320x202.jpeg';
-import empanadaCambray from '../../assets/empanada_cambray_2024-320x202.jpeg';
-import hawaiano from '../../assets/hawaiano_2024-320x202.jpeg'; 
-import panBig from '../../assets/pan_big2024-320x202.jpeg'; 
-import pandebono from '../../assets/pandebono_2024-320x202.jpeg';
-import arepa from '../../assets/arepa_calarquena_2024-scaled.jpeg';
-import chicharron from '../../assets/chicharron_dulce-scaled.jpeg';
-import churros from '../../assets/churros_2024-scaled.jpeg';
-import dedoqueso from '../../assets/dedodequesodulce_2024-scaled.jpeg';
-import panchocha from '../../assets/pan_chocha_2024-scaled.jpeg';
-import panquesudo from '../../assets/Pan_quesudo_2024-scaled.jpeg';
-import pansalchicha from '../../assets/pan_salchicha_2024-scaled.jpeg';
-import pastelgloria from '../../assets/pastelGloria_2024-scaled.jpeg';
-import rollos from '../../assets/rollos_2024-scaled.jpeg';
+import almojabana from "../../assets/almojabana_2024-320x202.jpeg";
+import bunuelos from "../../assets/bunuelos_2024_-320x202.jpeg";
+import croissant from "../../assets/croissant_2024_-320x202.jpeg";
+import dedoquesohojaldre from "../../assets/dedoquesohojaldre_2024-320x202.jpeg";
+import empanadaCambray from "../../assets/empanada_cambray_2024-320x202.jpeg";
+import hawaiano from "../../assets/hawaiano_2024-320x202.jpeg";
+import panBig from "../../assets/pan_big2024-320x202.jpeg";
+import pandebono from "../../assets/pandebono_2024-320x202.jpeg";
+import arepa from "../../assets/arepa_calarquena_2024-scaled.jpeg";
+import chicharron from "../../assets/chicharron_dulce-scaled.jpeg";
+import churros from "../../assets/churros_2024-scaled.jpeg";
+import dedoqueso from "../../assets/dedodequesodulce_2024-scaled.jpeg";
+import panquesudo from "../../assets/Pan_quesudo_2024-scaled.jpeg";
+import pansalchicha from "../../assets/pan_salchicha_2024-scaled.jpeg";
+import pastelgloria from "../../assets/pastelGloria_2024-scaled.jpeg";
+import rollos from "../../assets/rollos_2024-scaled.jpeg";
 
 // Arreglo de imágenes con rutas y descripciones
 const images = [
-  { src: almojabana, alt: 'Almojabana' },
-  { src: bunuelos, alt: 'Bunuelos' },
-  { src: croissant, alt: 'Croissant' },
-  { src: dedoquesohojaldre, alt: 'Dedo de queso hojaldre' },
-  { src: empanadaCambray, alt: 'Empanada Cambray' },
-  { src: hawaiano, alt: 'Hawaiano' },
-  { src: panBig, alt: 'Pan Big' },
-  { src: pandebono, alt: 'Pandebono' },
-  { src: arepa, alt: 'Arepa' },
-  { src: chicharron, alt: 'Chicharrón dulce' },
-  { src: churros, alt: 'Churros' },
-  { src: dedoqueso, alt: 'Dedo de queso' },
-  { src: panchocha, alt: 'Pan chocha' },
-  { src: panquesudo, alt: 'Pan quesudo' },
-  { src: pansalchicha, alt: 'Pan salchicha' },
-  { src: pastelgloria, alt: 'Pastel Gloria' },
-  { src: rollos, alt: 'Rollos' },
+  { src: almojabana, alt: "Almojabana" },
+  { src: bunuelos, alt: "Bunuelos" },
+  { src: croissant, alt: "Croissant" },
+  { src: dedoquesohojaldre, alt: "Dedo de queso hojaldre" },
+  { src: empanadaCambray, alt: "Empanada Cambray" },
+  { src: hawaiano, alt: "Hawaiano" },
+  { src: panBig, alt: "Pan Big" },
+  { src: pandebono, alt: "Pandebono" },
+  { src: arepa, alt: "Arepa" },
+  { src: chicharron, alt: "Chicharrón dulce" },
+  { src: churros, alt: "Churros" },
+  { src: dedoqueso, alt: "Dedo de queso" },
+  { src: panquesudo, alt: "Pan quesudo" },
+  { src: pansalchicha, alt: "Pan salchicha" },
+  { src: pastelgloria, alt: "Pastel Gloria" },
+  { src: rollos, alt: "Rollos" },
 ];
 ---
 
 <section class="grid grid-cols-4 gap-4 p-6">
-  {images.map(image => (
-    <Picture class={'h-auto'} src={image.src} formats={['avif', 'webp']} alt={image.alt} />
-  ))}
+  {
+    images.map((image) => (
+      <div class="relative group">
+        <Picture
+          class={
+            "w-52 h-32 object-cover rounded-lg shadow group-hover:blur-[1px] duration-300  "
+          }
+          src={image.src}
+          formats={["avif", "webp"]}
+          alt={image.alt}
+        />
+        <span class="group-hover:absolute hidden group-hover:block top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 text-lg capitalize font-bold bg-white bg-opacity-50 p-1 rounded-lg transition-all ">
+          {image.alt}
+        </span>
+      </div>
+    ))
+  }
 </section>
