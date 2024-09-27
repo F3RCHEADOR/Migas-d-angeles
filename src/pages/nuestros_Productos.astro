@@ -1,17 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Cuadrilla from "../components/ui/Cuadrilla.astro";
+import HeroProductos from "../components/HeroProductos.astro";
+
 ---
 
 <Layout title="Nuestros Productos">
-    <section class="grid grid-cols-7 ">
-        <div class="col-span-2  flex flex-col items-center justify-center">
-            <h2 class="text-4xl"><span class="text-yellow-400 text-left ">-</span>PANADERÍA</h2>
-            <p class="w-72 text-pretty my-4 text-lg font-light text-gray-500">En nuestra panadería, cada día es una obra maestra horneada. Con recetas
+    <HeroProductos />
+    <section class="grid grid-cols-1 xl:grid-cols-7 ">
+        <div class="xl:col-span-2 flex flex-col items-center justify-center">
+            <h2 class="text-4xl"><span class="text-yellow-400 text-center xl:text-left ">-</span>PANADERÍA</h2>
+            <p class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto">En nuestra panadería, cada día es una obra maestra horneada. Con recetas
                 ancestrales y secretos transmitidos de generación en generación, nuestro
                 pan es el tesoro mejor guardado de la ciudad.</p>
         </div>
 
-        <article class="col-span-4 "><Cuadrilla /></article>
+        <article class="col-span-4 "><Cuadrilla  /></article>
     </section>
 </Layout>
