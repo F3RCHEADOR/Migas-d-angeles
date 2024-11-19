@@ -1,20 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Cuadrilla from "../components/ui/Cuadrilla.astro";
+import ImageGallery from "../components/ui/Cuadrilla.jsx";
 import HeroProductos from "../components/HeroProductos.astro";
-
 ---
 
 <Layout title="Nuestros Productos">
     <HeroProductos />
-    <section class="grid grid-cols-1 xl:grid-cols-7 ">
-        <div class="xl:col-span-2 flex flex-col items-center justify-center">
-            <h2 class="text-4xl"><span class="text-yellow-400 text-center xl:text-left" transition:name="Panaderia">-</span>PANADERÍA</h2>
-            <p class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto">En nuestra panadería, cada día es una obra maestra horneada. Con recetas
-                ancestrales y secretos transmitidos de generación en generación, nuestro
-                pan es el tesoro mejor guardado de la ciudad.</p>
+    <section
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-2"
+    >
+        <div class="relative">
+            <div
+                class="md:sticky md:top-4 lg:ml-4 xl:ml-12 col-span-1 p-4 flex flex-col items-center justify-center mx-auto"
+            >
+                <h2 class="text-4xl flex items-center justify-center mx-auto text-center">
+                    <span
+                        class="text-yellow-400 text-center xl:text-left mx-2"
+                        transition:name="Panaderia">-</span
+                    >PANADERÍA
+                </h2>
+                <p
+                    class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto"
+                >
+                    En nuestra panadería, cada día es una obra maestra horneada.
+                    Con recetas ancestrales y secretos transmitidos de
+                    generación en generación, nuestro pan es el tesoro mejor
+                    guardado de la ciudad.
+                </p>
+            </div>
         </div>
 
-        <article class="col-span-4 "><Cuadrilla  /></article>
+        <article
+            class="md:ml-24 xl:ml-56 col-span-3 mx-auto md:col-span-4 lg:col-span-5"
+        >
+            <ImageGallery client:load />
+        </article>
     </section>
 </Layout>
