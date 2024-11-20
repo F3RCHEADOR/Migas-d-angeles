@@ -5,35 +5,96 @@ import HeroProductos from "../components/HeroProductos.astro";
 ---
 
 <Layout title="Nuestros Productos">
-    <HeroProductos />
-    <section
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-2"
-    >
-        <div class="relative">
-            <div
-                class="md:sticky md:top-4 lg:ml-4 xl:ml-12 col-span-1 p-4 flex flex-col items-center justify-center mx-auto"
-            >
-                <h2 class="text-4xl flex items-center justify-center mx-auto text-center">
-                    <span
-                        class="text-yellow-400 text-center xl:text-left mx-2"
-                        transition:name="Panaderia">-</span
-                    >PANADERÍA
-                </h2>
-                <p
-                    class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto"
-                >
-                    En nuestra panadería, cada día es una obra maestra horneada.
-                    Con recetas ancestrales y secretos transmitidos de
-                    generación en generación, nuestro pan es el tesoro mejor
-                    guardado de la ciudad.
-                </p>
-            </div>
-        </div>
-
-        <article
-            class="md:ml-24 xl:ml-56 col-span-3 mx-auto md:col-span-4 lg:col-span-5"
+  <HeroProductos />
+  <section
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-2 mt-6 mb-4"
+  >
+    <div class="relative">
+      <div
+        class="md:sticky md:top-4 lg:ml-4 xl:ml-12 col-span-1 p-4 flex flex-col items-center justify-center mx-auto"
+      >
+        <h2
+          class="text-4xl flex items-center justify-center mx-auto text-center"
         >
-            <ImageGallery client:load />
-        </article>
-    </section>
+          <span
+            class="text-yellow-400 text-center xl:text-left mx-2"
+            transition:name="Panaderia">-</span
+          >PANADERÍA
+        </h2>
+        <p
+          class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto"
+        >
+          En nuestra panadería, cada día es una obra maestra horneada. Con
+          recetas ancestrales y secretos transmitidos de generación en
+          generación, nuestro pan es el tesoro mejor guardado de la ciudad.
+        </p>
+      </div>
+    </div>
+
+    <article
+      class="md:ml-24 xl:ml-56 col-span-3 mx-auto md:col-span-4 lg:col-span-5"
+    >
+      <ImageGallery tipo={"pan"} client:load />
+    </article>
+  </section>
+
+  <section
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-2 my-4"
+  >
+    <div class="relative">
+      <div
+        class="md:sticky md:top-4 lg:ml-4 xl:ml-12 col-span-1 p-4 flex flex-col items-center justify-center mx-auto"
+      >
+        <h2
+          class="text-4xl flex items-center justify-center mx-auto text-center"
+        >
+          <span
+            class="text-yellow-400 text-center xl:text-left mx-2"
+            transition:name="Panaderia">-</span
+          >CAFETERÍA
+        </h2>
+        <p
+          class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto"
+        >
+          Acompaña nuestro delicioso café con esas delicias típicas de nuestra
+          tierra. Estos platos insignia que no pueden faltar en nuestra
+          gastronomía colombiana.
+        </p>
+      </div>
+    </div>
+
+    <article class="md:ml-24 xl:ml-56 col-span-3 mx-auto md:col-span-5">
+      <ImageGallery tipo={"cafeteria"} client:load />
+    </article>
+  </section>
+
+  <section
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-2"
+  >
+    <div class="relative">
+      <div
+        class="md:sticky md:top-4 lg:ml-4 xl:ml-12 col-span-1 p-4 flex flex-col items-center justify-center mx-auto"
+      >
+        <h2
+          class="text-4xl flex items-center justify-center mx-auto text-center"
+        >
+          <span
+            class="text-yellow-400 text-center xl:text-left mx-2"
+            transition:name="Panaderia">-</span
+          >Pastelería
+        </h2>
+        <p
+          class="w-72 text-pretty my-4 text-lg font-light text-gray-500 flex mx-auto"
+        >
+          Con recetas que han resistido el paso del tiempo y técnicas que
+          despiertan los sentidos, nuestros pasteleros crean magia en cada
+          bandeja.
+        </p>
+      </div>
+    </div>
+
+    <article class="md:ml-24 xl:ml-56 col-span-3 mx-auto md:col-span-5">
+      <ImageGallery tipo={"pasteleria"} client:load />
+    </article>
+  </section>
 </Layout>
