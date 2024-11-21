@@ -134,12 +134,12 @@ const ImageGallery = ({ tipo }) => {
 
   return (
     <div
-      className={`md:ml-6 grid grid-cols-2 md:grid-cols-3 ${tipo === "pan" ? "lg:grid-cols-4" : "lg:grid-cols-3"} mx-auto gap-4 p-4`}
+      className={`grid grid-cols-2 md:grid-cols-3 ${tipo === "pan" ? "lg:grid-cols-4" : "lg:grid-cols-3"} mx-auto gap-y-4 md:gap-y-8 gap-x-4 md:p-4`}
     >
       {filteredImages.map((image, index) => (
         <div key={index} className="relative group">
           <img
-            className={`${tipo === "pan" ? "w-56 h-40 xl:w-52 xl:h-32" : "w-80 h-56 xl:w-72 xl:h-52"} object-cover rounded-lg shadow group-hover:blur-[1px] duration-300`}
+            className={`${tipo === "pan" ? "w-80 h-56 lg:w-56 lg:h-40" : "w-80 h-56 xl:w-72 xl:h-52"} mx-auto object-cover rounded-lg shadow group-hover:blur-[1px] duration-300`}
             src={image.src}
             alt={image.alt}
           />
