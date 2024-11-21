@@ -102,6 +102,81 @@ const images = [
     alt: "PataconConCarne",
     tipo: "pasteleria",
   },
+  {
+    src: "/assets/torta-.jpg",
+    alt: "torta",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/torta-1.jpg",
+    alt: "torta1",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/torta-2.jpg",
+    alt: "torta2",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/torta-3.jpg",
+    alt: "torta4",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/torta-4.jpg",
+    alt: "torta5",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/torta-5.jpg",
+    alt: "torta6",
+    tipo: "tortas",
+  },
+  {
+    src: "/assets/tipica (1).jpg",
+    alt: "tipica-1",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (2).jpg",
+    alt: "tipica-2",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (3).jpg",
+    alt: "tipica-3",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (4).jpg",
+    alt: "tipica-4",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (5).jpg",
+    alt: "tipica-5",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (6).jpg",
+    alt: "tipica-6",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (7).jpg",
+    alt: "tipica-7",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (8).jpg",
+    alt: "tipica-8",
+    tipo: "tipica",
+  },
+  {
+    src: "/assets/tipica (9).jpg",
+    alt: "tipica-9",
+    tipo: "tipica",
+  },
 ];
 
 /// Mezclar las imágenes aleatoriamente
@@ -128,6 +203,18 @@ const ImageGallery = ({ tipo }) => {
         (image) => image.tipo === "pasteleria"
       );
       break;
+    case "tortas":
+      // Filtramos las imágenes que son de tipo "cafeteria"
+      filteredImages = shuffledImages.filter(
+        (image) => image.tipo === "tortas"
+      );
+      break;
+      case "tipica":
+        // Filtramos las imágenes que son de tipo "cafeteria"
+        filteredImages = shuffledImages.filter(
+          (image) => image.tipo === "tipica"
+        );
+        break;
     default:
       break;
   }
