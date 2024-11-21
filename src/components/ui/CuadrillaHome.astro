@@ -13,22 +13,22 @@ import reserva from "../../../public/assets/Reserva-tu-torta.jpg";
 
 // Arreglo de imágenes con rutas y descripciones
 const images = [
-  { src: tortas, alt: "tortas" },
-  { src: bandeja, alt: "bandeja" },
-  { src: cafe, alt: "cafe" },
-  { src: imagenCua, alt: "imagenCua" },
-  { src: pasteleria, alt: "pasteleria" },
-  { src: pulpo, alt: "pulpo" },
-  { src: restaurante, alt: "restaurante" },
-  { src: reserva, alt: "reserva" },
+  { src: tortas, alt: "tortas", tipo: "tortas" },
+  { src: bandeja, alt: "bandeja", tipo: "bandeja" },
+  { src: cafe, alt: "cafe", tipo: "cafeteria" },
+  { src: imagenCua, alt: "imagenCua", tipo: "pan" },
+  { src: pasteleria, alt: "pasteleria", tipo: "pasteleria" },
+  { src: pulpo, alt: "pulpo", tipo: "pulpo" },
+  { src: restaurante, alt: "restaurante", tipo: "restaurante" },
+  { src: reserva, alt: "reserva", tipo: "reserva" },
 ];
 ---
 
-<section class="w-full grid grid-cols-2 xl:grid-cols-4 gap-8  p-4">
+<section class="w-full grid grid-cols-2 xl:grid-cols-4 gap-8 p-4">
   {
     images.map((image) => (
-      <div class="relative group">
-        <Picture
+      <a href={`/nuestros_Productos#${image.tipo}`} class="relative group"  transition:name={`${image.tipo}`}>
+        <Picture 
           class={
             "w-full h-56 object-cover rounded-lg shadow group-hover:blur-[3px] duration-300  "
           }
@@ -36,10 +36,12 @@ const images = [
           formats={["avif", "webp"]}
           alt={image.alt}
         />
-        <span class="group-hover:absolute hidden group-hover:block top-1/2 right-1/2 transform translate-x-1/2 text-xl text-center capitalize font-bold bg-white bg-opacity-50 p-1 rounded-lg transition-all ">
-          {image.alt}
+        <span
+          class="group-hover:absolute hidden group-hover:block top-1/2 right-1/2 transform translate-x-1/2 text-xl text-center capitalize font-bold bg-white bg-opacity-50 p-1 rounded-lg transition-all "
+        >
+          PANADERÍA
         </span>
-      </div>
+      </a>
     ))
   }
 </section>
