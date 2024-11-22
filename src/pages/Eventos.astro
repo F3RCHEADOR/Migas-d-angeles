@@ -1,0 +1,127 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ImageSlider from "../components/ui/SliderEventoImagen"; // Asegúrate de que la ruta sea correcta
+---
+
+<Layout title="Eventos">
+    <main class="w-full px-24 font-sans ">
+        <h1 class="text-4xl text-center font-semibold my-16">
+            ¿Deseas celebrar un evento con nosotros?
+        </h1>
+        <section class="grid md:grid-cols-2 gap-4 mx-auto mb-12">
+            <div
+                class="flex flex-col items-center space-y-8 mt-8 max-w-xl text-justify mx-auto text-2xl text-gray-700 font-thin"
+            >
+                <p>
+                    Al elegirnos como anfitriones para tu evento, te
+                    garantizamos más que un simple espacio; <strong
+                        >te ofrecemos una experiencia única y memorable.</strong
+                    >
+                </p>
+                <p>
+                    Nuestro compromiso radica en brindarte un <strong
+                        >servicio personalizado</strong
+                    >, desde la planificación hasta la ejecución de tu evento,
+                    adaptándonos a <strong>tus necesidades</strong> y asegurándonos
+                    de que cada detalle sea perfecto.
+                </p>
+                <p>
+                    Déjanos tus datos, incluyendo tu número de contacto, así
+                    como los detalles específicos del evento que te gustaría
+                    celebrar. Puedes elegir entre nuestra tienda de <strong
+                        >La Castellana o en la calle de La Vía.</strong
+                    >
+                </p>
+
+                <h2
+                    class="text-4xl text-center font-semibold bg-gradient-to-r from-purple-600 via-pink-800 to-red-700 bg-clip-text text-transparent"
+                >
+                    ¡Esperamos ser parte de tu celebración!
+                </h2>
+            </div>
+            <div class="m-1 p-4">
+                <!-- Usar el componente ImageSlider dentro de React -->
+                <ImageSlider client:load />
+            </div>
+        </section>
+        <form class="max-w-4xl mx-auto border-l border-r border-b p-4 shadow-xl mb-20">
+            <div class="grid grid-cols-2 gap-12">
+                <div>
+                    <label for="name">Nombre y Apellido *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="rounded-full bg-gray-200 w-full h-12 pl-4 text-lg"
+                    />
+                </div>
+                <div>
+                    <label for="cellphone">Teléfono *</label>
+                    <input
+                        type="text"
+                        id="cellphone"
+                        class="rounded-full bg-gray-200 w-full h-12 pl-4 text-lg"
+                    />
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-12 my-6">
+              
+                <div>
+                    <label for="email">Correo Electrónico *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        class="rounded-full bg-gray-200 w-full h-12 pl-4 text-lg"
+                    />
+                </div>
+                <div>
+                    <label for="name">Tipo de Evento *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        class="rounded-full bg-gray-200 w-full h-12 pl-4 text-lg"
+                    />
+                </div>
+            </div>
+            <div class="grid grid-cols-3 gap-12 my-6">
+                <div>
+                    <label for="date">¿Cuando va a ser el evento? *</label>
+                    <input
+                        type="date"
+                        id="date"
+                        class="rounded-full bg-gray-200 w-full h-12 px-6 text-lg"
+                    />
+                </div>
+                <div>
+                    <label for="time">¿A que hora? *</label>
+                    <input
+                        type="time"
+                        id="time"
+                        class="rounded-full bg-gray-200 w-full h-12 px-6 text-lg"
+                    />
+                </div>
+                <div>
+                    <label for="number">Numero de invitados *</label>
+                    <input
+                        type="number"
+                        id="number"
+                        class="rounded-full bg-gray-200 w-full h-12 px-6 text-lg"
+                    />
+                </div>
+            </div>
+            <label for="observaciones">Observaciones Adicionales</label>
+            <textarea id="observaciones" rows="3" class="p-4 text-lg italic w-full bg-gray-200"
+            ></textarea>
+            <div class="flex items-center justify-start space-x-2.5 mt-4">
+                <input type="checkbox" id="aceptar" />
+                <span
+                    >Acepto el Uso de mis datos personales para este fin.</span>
+            </div>
+
+            <button
+                type="button"
+                class="w-full font-semibold text-center h-12 bg-yellow-200 my-6"
+                >Enviar Reservación</button
+            >
+        </form>
+    </main>
+</Layout>
