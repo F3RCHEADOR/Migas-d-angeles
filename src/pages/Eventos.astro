@@ -4,11 +4,11 @@ import ImageSlider from "../components/ui/SliderEventoImagen"; // Asegúrate de 
 ---
 
 <Layout title="Eventos">
-    <main class="w-full px-24 font-sans ">
-        <h1 class="text-4xl text-center font-semibold my-16">
+    <main class="w-full px-8 md:px-24 font-sans ">
+        <h1 class="text-3xl md:text-4xl text-center font-thin md:font-semibold my-16">
             ¿Deseas celebrar un evento con nosotros?
         </h1>
-        <section class="grid md:grid-cols-2 gap-4 mx-auto mb-12">
+        <section class="grid md:grid-cols-2 gap-4 mx-auto md:mb-12">
             <div
                 class="flex flex-col items-center space-y-8 mt-8 max-w-xl text-justify mx-auto text-2xl text-gray-700 font-thin"
             >
@@ -34,18 +34,18 @@ import ImageSlider from "../components/ui/SliderEventoImagen"; // Asegúrate de 
                 </p>
 
                 <h2
-                    class="text-4xl text-center font-semibold bg-gradient-to-r from-purple-600 via-pink-800 to-red-700 bg-clip-text text-transparent"
+                    class="text-3xl md:text-4xl text-center font-semibold bg-gradient-to-r from-purple-600 via-pink-800 to-red-700 bg-clip-text text-transparent"
                 >
                     ¡Esperamos ser parte de tu celebración!
                 </h2>
             </div>
-            <div class="m-1 p-4">
+            <div class="m-1 md:p-4">
                 <!-- Usar el componente ImageSlider dentro de React -->
                 <ImageSlider client:load />
             </div>
         </section>
-        <form class="max-w-4xl mx-auto border-l border-r border-b p-4 shadow-xl mb-20">
-            <div class="grid grid-cols-2 gap-12">
+        <form class="max-w-4xl mx-auto border-l border-r border-b p-4 shadow-xl -mt-24 md:mt-00 mb-20">
+            <div class="grid md:grid-cols-2 gap-4 md:gap-12">
                 <div>
                     <label for="name">Nombre y Apellido *</label>
                     <input
@@ -63,7 +63,7 @@ import ImageSlider from "../components/ui/SliderEventoImagen"; // Asegúrate de 
                     />
                 </div>
             </div>
-            <div class="grid grid-cols-2 gap-12 my-6">
+            <div class="grid md:grid-cols-2 gap-4 md:gap-12 md:my-6">
               
                 <div>
                     <label for="email">Correo Electrónico *</label>
@@ -82,7 +82,7 @@ import ImageSlider from "../components/ui/SliderEventoImagen"; // Asegúrate de 
                     />
                 </div>
             </div>
-            <div class="grid grid-cols-3 gap-12 my-6">
+            <div class="grid md:grid-cols-3 gap-4 md:gap-12 md:my-6">
                 <div>
                     <label for="date">¿Cuando va a ser el evento? *</label>
                     <input
